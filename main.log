@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  29 APR 2019 22:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  29 APR 2019 23:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -639,85 +639,86 @@ Cap\'{\i }tulo 1.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language append on input line 23.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 25.
+(babel)             in language append on input line 29.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 25.
+(babel)             in language append on input line 29.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.25 \chapter
+l.29 \chapter
              {Corpo do Trabalho??} [1
 
 ]
 Cap\'{\i }tulo 2.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 25.
+(babel)             in language append on input line 29.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 27.
+(babel)             in language append on input line 31.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 27.
+(babel)             in language append on input line 31.
 [2
 
 ]
 Cap\'{\i }tulo 3.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 27.
+(babel)             in language append on input line 31.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 29.
+(babel)             in language append on input line 33.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 29.
+(babel)             in language append on input line 33.
 [3
 
 ]
 Cap\'{\i }tulo 4.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 29.
+(babel)             in language append on input line 33.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 35.
+(babel)             in language append on input line 39.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 35.
+(babel)             in language append on input line 39.
 [4
 
 ]
 Ap\^endice A.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 35.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 39.
-Package babel Info: Redefining portuges shorthand "|
 (babel)             in language append on input line 39.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 43.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 39.
+(babel)             in language append on input line 43.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 43.
 [5
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 39.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 43.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 39.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 39.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 43.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 43.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: A40F1E5C2C576ECAE0B44CBBD06FCB62;249.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 39.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 43.
  ) 
 Here is how much of TeX's memory you used:
- 6170 strings out of 492982
- 87624 string characters out of 6134895
+ 6174 strings out of 492982
+ 87674 string characters out of 6134895
  174616 words of memory out of 5000000
- 9650 multiletter control sequences out of 15000+600000
- 13169 words of font info for 33 fonts, out of 8000000 for 9000
+ 9652 multiletter control sequences out of 15000+600000
+ 14172 words of font info for 35 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 30i,6n,26p,232b,354s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,6n,26p,238b,354s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf/
 fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/c
 m-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb
 ></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/f
 onts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm
--super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
-
-Output written on main.pdf (8 pages, 136219 bytes).
+-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1095.pfb>
+</usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf/fo
+nts/type1/public/cm-super/sftt1200.pfb>
+Output written on main.pdf (8 pages, 183363 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
+ 109 PDF objects out of 1000 (max. 8388607)
+ 87 compressed objects within 1 object stream
  12 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
