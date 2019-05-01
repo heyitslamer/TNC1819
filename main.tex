@@ -6,7 +6,7 @@
 
 \title{\includegraphics[width=0.5\textwidth]{minho.png}~\\[1cm] O Sistema Merkle-Hellman Knapsack}
 
-\author{Bernardo Rodrigues\\ \texttt{a79008@alunos.uminho.pt}\\ \and César Silva\\ \texttt{a77518@alunos.uminho.pt}\\ \and Maria Franisca Tavares?\\ \texttt{a99999@alunos.uminho.pt}\\}
+\author{Bernardo Rodrigues\\ \texttt{a79008@alunos.uminho.pt}\\ \and César Silva\\ \texttt{a77518@alunos.uminho.pt}\\ \and Maria Francisca Fernandes\\ \texttt{a72450@alunos.uminho.pt}\\}
 
 \date{Universidade do Minho --- \today}
 
@@ -27,6 +27,22 @@ Este foi um dos pioneiros da criptografia de chave pública, inventado por \text
 A ideia por detrás deste sistema é mais simples do que a de sistemas como o \textit{RSA}, assentando no problema  (tendo já sido quebrado -- meter isto noutro sitio??).
 
 \chapter{Corpo do Trabalho??}
+
+\begin{algorithm}
+	\caption{Solução da soma do subconjunto super crescente}
+	\begin{algorithmic}[1]
+		\State $i \gets n$
+		\While{$i \ge 1 $}
+			\If{$s \ge b_i $}
+				\State $x_i \gets 1$
+			\Else
+				\State $x_i \gets 0 $
+			\EndIf
+		\State $i \gets i - 1$
+		\EndWhile
+\end{algorithmic}
+\end{algorithm}
+
 
 \chapter{Conclusões}
 
