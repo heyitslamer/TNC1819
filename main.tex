@@ -12,24 +12,56 @@
 
 \maketitle
 
-\tableofcontents
-
 \begin{abstract}
 
-	Coisas nunca antes ditas !!
-	Ao contrario do RSA nao da para fazer assinaturas criptograficas - wiki
+	Este documento apresenta os vários passos e considerações feitas para implementação do sistema em questão. Assim como, alguns factos relativos a este.  
+
 
 \end{abstract}
 
+\tableofcontents
+
 \chapter{Introdução}
 
-
+	Ao contrario do RSA nao da para fazer assinaturas criptograficas - wiki
 1976 Diffie Hellman introduzem a ideia de criptografia de chave publica
-Este trabalho foi desenvolvido no ambito da Unidade Curricular de \texttt{Teoria de Números Computacional}. De entre as escolhas possiveis, foi escolhido estudar o sistema \textit{Merkle-Hellman Knapsack}. \\
+Este trabalho foi desenvolvido no ambito da Unidade Curricular de \textit{Teoria de Números Computacional}. De entre as escolhas possiveis, foi escolhido estudar o sistema \textit{Merkle-Hellman Knapsack}. \\
 Este foi um dos pioneiros da criptografia de chave pública, inventado por \textbf{Ralph Merkle} e por \textbf{Martin Hellman} em 1978.
 A ideia por detrás deste sistema é mais simples do que a de sistemas como o \textit{RSA}, assentando no problema  (tendo já sido quebrado -- meter isto noutro sitio??).
 
-\chapter{Corpo do Trabalho??}
+\chapter{Implementação}
+
+Ao longo das secções deste capítulo apresentamos os vários algoritmos seguidos para a codificação do sistema.
+
+\section{Geração de Permutações}
+
+Um dos passos da Geração da Chave Pública(criar ref) consiste em gerar uma permutação de uma sequência. Para tal utilizamos o algoritmo proposto por \textbf{Sandra Sattolo}. Este itera uma lista - $seq$ - a partir do ultimo índice desta - $n$. Em cada passo calculamos um índice aleatório - $j$ - tal que $1 \le j < n$ e de seguida trocamos os valores de $seq_j$ e $seq_n$ e (explicar resto). Continuamos assim até que $n = 1$.\\
+A implementacão deste pode ser visualizada em criar ref.\\
+O algoritmo pode ser visto aqui. criar ref.
+
+\section{Geração de um sequência super crescente aleatória}
+
+Um dos componentes da Chave Privada, um sequência ${b_1, ..., b_n}$ é considerada super crescente se:
+\begin{center}
+	$$b_i > \sum_{j = 1}^{i - 1} b_j$$ para cada $i$ tal que $2 \le i \le n$. 
+\end{center}
+Como tal, conseguimos deduzir:
+\begin{center}
+	$b_1 + b_2 + ... + b_k < 2 \times b_k$
+\end{center}
+Usaremos este facto para gerar a nossa sequência super crescente.
+
+\section{Geração de Coprimos}
+
+\section{Geração da Chave}
+
+\subsection{Versão Multi-Iterada}
+
+\section{Encriptacão}
+
+\section{Decriptação}
+
+\subsection{Versão Multi-Iterada}
 
 \begin{algorithm}
 	\caption{Solução da soma do subconjunto super crescente}
@@ -53,10 +85,6 @@ O RSA é melhor, passados 4 anos da sua cricao o Knapsack foi quebrado.
 Falar em quebrar uma mensagem em pedaços?? 
 Criticar : facil de quebrar.
 Trabalho futuro: implementacao de um quebra.
-
-\chapter{Bibliografia??}
-
-Meter o latex a fazer isto por nós
 
 \appendix
 
