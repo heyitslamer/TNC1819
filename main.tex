@@ -41,15 +41,36 @@ O algoritmo pode ser visto aqui. criar ref.
 
 \section{Geração de um sequência super crescente aleatória}
 
-Um dos componentes da Chave Privada, um sequência ${b_1, ..., b_n}$ é considerada super crescente se:
-\begin{center}
-	$$b_i > \sum_{j = 1}^{i - 1} b_j$$ para cada $i$ tal que $2 \le i \le n$. 
-\end{center}
+Um dos componentes da Chave Privada é uma sequência, esta é considerada super crescente se:\\
+\begin{samepage}
+	\begin{definition}
+	Consideremos uma sequência de números ${b_1, ..., b_n}$. Esta diz-se super crescente se:
+	\begin{center}
+		$b_i > \sum_{j = 1}^{i - 1} b_j$ para cada $i$ tal que $2 \le i \le n$. 
+	\end{center}
+	\end{definition}
+\end{samepage}
 Como tal, conseguimos deduzir:
+
 \begin{center}
 	$b_1 + b_2 + ... + b_k < 2 \times b_k$
 \end{center}
-Usaremos este facto para gerar a nossa sequência super crescente.
+Ou seja, precisamos apenas de considerar o último valor gerado para calcular um possivel próximo.
+Usaremos este facto para gerar a nossa sequência super crescente.\\
+Com isto apresentamos o nosso algoritmo.
+\begin{algorithm}
+	\caption{Geração da sequência super crescente aleatória}
+	\textbf{Recebe}: $n$ - o tamanho da sequência\\
+	\textbf{Devolve}: $\{x_1, ..., x_n\}$ - uma sequência super crescente aleatória
+	\begin{algorithmic}[1]
+		\State $k$ um limite superior aleatóriamente grande
+		\State $f$ uma funcão que satisfaz criar ref para a deducao 
+		\State $x_1 \gets j$ tal que $1 \le j \le k$ aleatório
+		\For{$x_i$ com $i:=2$ \textbf{até} $n$ }
+			\State $x_i = f(x_{i-1})$
+		\EndFor
+\end{algorithmic}
+\end{algorithm}
 
 \section{Geração de Coprimos}
 
