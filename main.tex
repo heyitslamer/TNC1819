@@ -1,4 +1,4 @@
-\documentclass[11pt]{report}
+\documentclass[11pt, language=portuguese]{report}
 
 \input{estrutura.tex}
 
@@ -21,6 +21,8 @@
 
 \tableofcontents
 
+\listofalgorithms
+
 \chapter{Introdução}
 
 	Ao contrario do RSA nao da para fazer assinaturas criptograficas - wiki
@@ -32,73 +34,140 @@ A ideia por detrás deste sistema é mais simples do que a de sistemas como o \t
 \chapter{Implementação}
 
 Ao longo das secções deste capítulo apresentamos os vários algoritmos seguidos para a codificação do sistema.
+A implementação destes segue em anexo, assim como ficheiros de texto que acompanham o relatório.
 
 \section{Geração de Permutações}
+\label{perm}
 
-Um dos passos da Geração da Chave Pública(criar ref) consiste em gerar uma permutação de uma sequência. Para tal utilizamos o algoritmo proposto por \textbf{Sandra Sattolo}. Este itera uma lista - $seq$ - a partir do ultimo índice desta - $n$. Em cada passo calculamos um índice aleatório - $j$ - tal que $1 \le j < n$ e de seguida trocamos os valores de $seq_j$ e $seq_n$ e (explicar resto). Continuamos assim até que $n = 1$.\\
-A implementacão deste pode ser visualizada em criar ref.\\
-O algoritmo pode ser visto aqui. criar ref.
+Um dos passos da Geração da Chave Pública - \ref{gkey} - consiste em gerar uma permutação de uma sequência. Para tal utilizamos o algoritmo proposto por \textbf{Sandra Sattolo}\autocite{sattolo}.\\
+Este itera uma lista - $seq$ - a partir do último índice desta - $n$. Em cada passo calculamos um índice aleatório - $j$ - tal que $1 \le j < n$ e de seguida trocamos os valores de $seq_j$ e $seq_n$. Finalmente, terminámos quando $n = 1$. No nossa implementação usamos listas para guardar as permutações.\\
+A implementacão deste pode ser vista em: 
 
 \section{Geração de um sequência super crescente aleatória}
+\label{seq}
 
 Um dos componentes da Chave Privada é uma sequência, esta é considerada super crescente se:\\
-\begin{samepage}
-	\begin{definition}
+\begin{definition}
 	Consideremos uma sequência de números ${b_1, ..., b_n}$. Esta diz-se super crescente se:
 	\begin{center}
-		$b_i > \sum_{j = 1}^{i - 1} b_j$ para cada $i$ tal que $2 \le i \le n$. 
+		$b_i > \sum_{j = 1}^{i - 1} b_j$ para cada $i$, $2 \le i \le n$. 
 	\end{center}
-	\end{definition}
-\end{samepage}
+\end{definition}
+
 Como tal, conseguimos deduzir:
 
 \begin{center}
 	$b_1 + b_2 + ... + b_k < 2 \times b_k$
 \end{center}
+
 Ou seja, precisamos apenas de considerar o último valor gerado para calcular um possivel próximo.
-Usaremos este facto para gerar a nossa sequência super crescente.\\
 Com isto apresentamos o nosso algoritmo.
-\begin{algorithm}
+\begin{algorithm}[H]
 	\caption{Geração da sequência super crescente aleatória}
 	\textbf{Recebe}: $n$ - o tamanho da sequência\\
 	\textbf{Devolve}: $\{x_1, ..., x_n\}$ - uma sequência super crescente aleatória
 	\begin{algorithmic}[1]
 		\State $k$ um limite superior aleatóriamente grande
-		\State $f$ uma funcão que satisfaz criar ref para a deducao 
+		\State $f$ uma funcão que satisfaz $f(x) > 2 * x$
 		\State $x_1 \gets j$ tal que $1 \le j \le k$ aleatório
 		\For{$x_i$ com $i:=2$ \textbf{até} $n$ }
 			\State $x_i = f(x_{i-1})$
 		\EndFor
-\end{algorithmic}
+	\end{algorithmic}
 \end{algorithm}
+
+A implementacão deste algoritmo segue em anexo - ()().
 
 \section{Geração de Coprimos}
+\label{coprimos}
 
-\section{Geração da Chave}
+Também durante a Geração das Chaves - \ref{gkey} - do sistema temos de considerar dois valores, $M$ e $W$.
+Dada um sequência super crescente $\{b_1, ..., b_n\}$, $M$ verifica:
+NOTA :: ISTO TA UM BOCADO OFF TOPIC, DEPOIS VER
+\begin{center}
+	$M > \sum_{j = 1}^{N} b_j$
+\end{center}
 
-\subsection{Versão Multi-Iterada}
+$W$ por sua vez, verifica:
+\begin{center}
+        $1 \leq W < M$ e $ \gcd(W,M) = 1 $
+\end{center}
 
-\section{Encriptacão}
+O algoritmo considerado adopta uma estratégia brute force. Esta é possível devido ao apresentado aqui \autocite{stackex}. Este considera um valor aleatório para $W$ compreendido no intervalo apresentado acima, testando o $\gcd$ de este com $M$. Se forem coprimos o processo para, caso contrário somamos um a este e repetimos o teste. O algoritmo pode ser descrito como.
 
-\section{Decriptação}
-
-\subsection{Versão Multi-Iterada}
-
-\begin{algorithm}
-	\caption{Solução da soma do subconjunto super crescente}
+\begin{algorithm}[H]
+	\caption{Gerador de Coprimos - brute force}
+	\textbf{Recebe}: $M$ - um número\\
+	\textbf{Devolve}: $W$ - um número coprimo com o argumento, $1 \le W < M$
 	\begin{algorithmic}[1]
-		\State $i \gets n$
-		\While{$i \ge 1 $}
-			\If{$s \ge b_i $}
-				\State $x_i \gets 1$
-			\Else
-				\State $x_i \gets 0 $
-			\EndIf
-		\State $i \gets i - 1$
+		\State $W \gets$ número aleatório tal que $1 \le W < M$	
+		\While{$\gcd(M, W) \ne 1$}
+			\State $W = W + 1$
 		\EndWhile
-\end{algorithmic}
+	\end{algorithmic}
 \end{algorithm}
 
+A sua implementação segue - ref.
+
+\section{Geração da Chave}
+\label{gkey}
+Dada uma permutação de uma sequência $\pi$.
+\\
+Dada uma sequência super crescente ${b_1, ..., b_n}$.
+\\
+Dados dois inteiros co primos W e M.
+\\
+A geração da chave pode ser dividida em duas subcategorias.
+
+\subsection{Geração da chave Pública}
+\begin{definition}\label{def:4}
+	São computados ${a_i}$ tal que:
+	\begin{center}
+		$a_i = W \times b_{\pi_i} mod M $ para cada $i$ tal que $1 \le i \le n$.
+        \end{center}
+\end{definition}
+A chave publica é dada por $({a_1, a_2, ..., a_n})$
+
+\subsection{Geração da chave Privada}
+A chave privada é dada por $(\pi, M, W, {(b_1, b_2, b_3, ..., b_n)})$
+\autocite{handbook}
+
+\subsection{Versão Multi-Iterada}
+Uma variante do algoritmo base de Merkle-Hellman envolve disfarçar a sequência super crescente, através de sucessivas multiplicações modulares.
+\\
+Neste caso precisamos de fixar outro inteiro, T, que ditará o numero de iterações para geração da chave.
+Mais uma vez um inteiro N é fixo como parâmetro de sistema.
+\\
+
+Para $1 \le j \le T$ são feitos os cálculos descritos na definição ja nao e definicao. Para calcular a sequencia atual são calculados $M_j$ e $W_j$, da mesma maneira que eram calculados na geração da chaves no algoritmo básico. O $M_j$ é calculado com base na sequência super crescente anterior (índice $j-1$) sendo então depois calculado $W_j$ como descrito na definição \ref{def:3}, tendo como base uma sequencia ${a_1, ..., a_n}$ dada, sendo esta a chave privada.
+
+\section{Encriptacão}
+A encriptação é feita a partir da chave pública $a_1, a_2, ... a_n$. É representada a mensagem $m$ a encriptar em binário como uma string de tamanho N. ($m = m_1 m_2 ... m_n$)
+\\
+Finalmente é calculado um inteiro c tal que:
+    $c = \sum_{i = 1}^{N} a_i \times m_i$.
+
+\section{Decriptação}
+Para recuperar a mensagem $m$ a partir de $c$, o dono da chave privada deve:
+Calcular $d = W^{-1}\times c$ mod $M$.
+\\
+Encontrar inteiros ${r_1, ..., r_n}, r_i \in \{0,1\}$ tal que $d = r_1 \times b_1 + r_2 \times b_2 + ... + r_n \times b_n$.
+\\
+Os bits da mensagem são então $m_i = r_{\pi_i}, i = 1, 2, ... n$.
+\subsection{Versão Multi-Iterada}
+A decriptação desta variante do algoritmo é análoga à sua encriptação, ou seja, os cálculos efetuados são os mesmos do que na versão básica do algoritmo, mas são efetuados mais vezes.
+\\
+A decriptação é feita a partir de sucessivamente calcularmos:
+\begin{center}
+$d_j = W^{-1}\times d_{j+1}$ mod $M_j$, para $j = {t, t-1, ..., 1}$
+\end{center}
+onde $d_{t+1} = c$.
+\\
+Finalmente só temos de encontrar inteiros ${r_1, ..., r_n}, r_i \in \{0,1\}$ tal que:
+\begin{center}
+    $d_1 = r_1\times a_1 + r_2\times a_2 + ... + r_n\times a_n$.
+\end{center}
+E os bits da mensagem são recuperados a partir de aplicarmos a permutação $\pi$.
 
 \chapter{Conclusões}
 
@@ -106,7 +175,7 @@ Após a realizaçao do trabalho e depois de compreendido o problema em questão 
 Existem várias maneiras de o atacar.È possivel faze-lo,por exemplo, atacando a sua versão Multi-Iterada ou através da divisão em várias partes (falta-me aqui a palavra apropriada) , existindo ainda mais alguns ataques possiveis. Sendo uma demonstraçao de um ataque a este sistema é uma boa aposta para um trabalho futuro.
 Para finalizar, resta só concluir que existem poucos sistemas que sejam eguros e poderosos que ainda não tenham sido quebrados. Um deles é o RSA fazendo por isso com que seja um dos, se nao mesmo o mais utilizado. 
 
-
+\printbibliography
 
 \appendix
 

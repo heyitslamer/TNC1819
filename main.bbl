@@ -1,0 +1,67 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{none/global//global/global}
+  \entry{sattolo}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=W}{%
+         family={Wikipedia},
+         familyi={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{W1}
+    \strng{fullhash}{W1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+  \field{howpublished}{\url{http://en.wikipedia.org/w/index.php?title=Fisher\%E2\%80\%93Yates\%20shuffle&oldid=882337194}}
+    \field{note}{Acedido em 05-May-2019}
+    \field{title}{{Fisher–Yates shuffle} --- {W}ikipedia{,} The Free
+  Encyclopedia}
+  \endentry
+
+  \entry{stackex}{misc}{}
+    \field{labeltitlesource}{title}
+  \field{howpublished}{\url{https://math.stackexchange.com/questions/2430742/finding-a-coprime-of-a-general-magnitude}}
+    \field{title}{Finding a coprime of a general magnitude}
+  \endentry
+
+  \entry{handbook}{book}{}
+    \name{author}{1}{}{%
+      {{hash=MAJ}{%
+         family={Menezes},
+         familyi={M\bibinitperiod},
+         given={A.\bibnamedelima J.},
+         giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {CRC Press}%
+    }
+    \strng{namehash}{MAJ1}
+    \strng{fullhash}{MAJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{chapter}{8.6}
+    \field{isbn}{978-0849385230}
+    \field{note}{Acedido a partir de
+  \url{http://cacr.uwaterloo.ca/hac/about/chap8.pdf}}
+    \field{title}{Handbook of applied cryptography}
+    \field{year}{1997}
+  \endentry
+\enddatalist
+\endinput
