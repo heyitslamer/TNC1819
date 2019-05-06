@@ -25,10 +25,10 @@
 
 \chapter{Introdução}
 
-Este trabalho foi desenvolvido no ambito da Unidade Curricular de \textit{Teoria de Números Computacional}. De entre as escolhas possiveis, foi escolhido estudar o sistema \textit{Merkle-Hellman Knapsack}. \\
+Este trabalho foi desenvolvido no ambito da Unidade Curricular de \textit{Teoria de Números Computacional}. De entre as escolhas possíveis, foi escolhido estudar o sistema \textit{Merkle-Hellman Knapsack}. \\
 Este foi um dos pioneiros da criptografia de chave pública, inventado por \textbf{Ralph Merkle} e por \textbf{Martin Hellman} em 1978, 2 anos após a introdução deste conceito.
-Ao contrário do \textbf{RSA}, um outro sistema de chave pública, este não serve para fazer autentificações a partir de assinaturas digitais. Devido à encriptação deste só usar a chave pública e a decriptação só usar a chave privada.
-O sistema, assenta num problema \textit{subset sub problem} um caso especial do problema da \textit{Mochila}, conhecido por ser \textbf{NP-complete}. Utiliza um variante "fácil" que acenta em sequências super crescentes para as chaves privadas, e um "difícil" para as chaves públicas.
+Ao contrário do \textbf{RSA}, um outro sistema de chave pública, este não serve para fazer autenticações a partir de assinaturas digitais. Devido à encriptação deste só usar a chave pública e a decriptação só usar a chave privada.
+O sistema, assenta num problema \textit{subset sub problem} um caso especial do problema da \textit{Mochila}, conhecido por ser \textbf{NP-complete}. Utiliza uma variante "fácil" que acenta em sequências super crescentes para as chaves privadas, e uma "difícil" para as chaves públicas.
 \chapter{Implementação}
 
 Link da implementação no CoCalc - \href{https://cocalc.com/share/1bede121-9d2a-477f-be2c-1dea8a3a05a6/Merkle-Hellman%20knapsack.ipynb?viewer=share}{aqui} - Kernel usado: \texttt{SageMath, Py3}.
@@ -43,7 +43,7 @@ Um dos passos da Geração da Chave Pública - \ref{gkey} - consiste em gerar um
 Este itera uma lista - $seq$ - a partir do último índice desta - $n$. Em cada passo calculamos um índice aleatório - $j$ - tal que $1 \le j < n$ e de seguida trocamos os valores de $seq_j$ e $seq_n$. Finalmente, terminámos quando $n = 1$. Na nossa implementação usamos listas para guardar as permutações.\\
 Na implementação, a função tem o nome \textbf{sattoloShuffle}.
 
-\section{Geração de um sequência super crescente aleatória}
+\section{Geração de uma sequência super crescente aleatória}
 \label{seq}
 
 Um dos componentes da Chave Privada - \ref{gkey} - é uma sequência, esta é considerada super crescente se:\\
@@ -112,7 +112,7 @@ Na implementação, a função que calcula um $W$ tem o nome \textbf{findW}.
 \section{Geração das Chaves}
 \label{gkey}
 Reunindo os vários algoritmos decritos nas secções anteriores, podemos agora construir as Chaves do sistema.
-Consideremos as várias componentes precisas ao longo deste secção.
+Consideremos as várias componentes precisas ao longo desta secção.
 \begin{itemize}
 	\item Uma permutação - $\pi$ - \ref{perm}
 	\item Uma sequência super crescente aleatória - $\{b_1, ..., b_n\}$ - \ref{seq}
@@ -141,7 +141,7 @@ Neste caso precisamos de fixar outro inteiro, T, que ditará o numero de iteraç
 Mais uma vez um inteiro N é fixo como parâmetro de sistema.
 \\
 
-Para $1 \le j \le T$ são feitos os cálculos descritos em \ref{coprimos}. Para calcular a sequencia atual são calculados $M_j$ e $W_j$, da mesma maneira que eram calculados na geração da chaves no algoritmo básico. O $M_j$ é calculado com base na sequência super crescente anterior (índice $j-1$) sendo depois calculado $W_j$ de maneira igual ao calculado na versão normal. A sequência dada na primeira iteração ${a_1, ..., a_n}$ é a que será usada na Chave Privada.
+Para $1 \le j \le T$ são feitos os cálculos descritos em \ref{coprimos}. Para calcular a sequência atual são calculados $M_j$ e $W_j$, da mesma maneira que eram calculados na geração da chaves no algoritmo básico. O $M_j$ é calculado com base na sequência super crescente anterior (índice $j-1$) sendo depois calculado $W_j$ de maneira igual ao calculado na versão normal. A sequência dada na primeira iteração ${a_1, ..., a_n}$ é a que será usada na Chave Privada.
 
 Na implementação, a função que que gera as Chave Simples tem o nome \textbf{KSKeyGen}. Para a versão Multi Iterada a função tem o nome \textbf{MIKSKeyGen}.
 \section{Encriptacão}
@@ -161,7 +161,7 @@ Encontrar inteiros ${r_1, ..., r_n}, r_i \in \{0,1\}$ tal que $d = r_1 \times b_
 \\
 Os bits da mensagem são então $m_i = r_{\pi_i}, i = 1, 2, ... n$.
 \subsection{Versão Multi-Iterada}
-A decriptação desta variante do algoritmo é análoga à sua encriptação, ou seja, os cálculos efetuados são os mesmos do que na versão básica do algoritmo, mas são efetuados mais vezes.
+A decriptação desta variante do algoritmo é análoga à sua encriptação, ou seja, os cálculos efetuados são os mesmos do que na versão básica do algoritmo, mas são efetuados $T$ vezes.
 \\
 A decriptação é feita a partir de sucessivamente calcularmos:
 \begin{center}
@@ -179,8 +179,8 @@ Na implementação, a função para a versão normal tem o nome \textbf{KSDecryp
 
 \chapter{Conclusões}
 
-Após a realização do trabalho e depois de compreendido o problema em questão foi possivel concluir que o sistema Merkle-Hellman Knapsack não é seguro, tal como ficou provado, apenas alguns anos após a sua publicação, por \textbf{Adi Shamir}.
-Existem várias maneiras de o atacar, de entre estas, destaca-se o \textbf{L}enstra-\textbf{L}enstra-\textbf{L}ovász\autocite{handbook}, que reduz o problema \textit{subset sum problem} a um de encontrar \textit{short vector in a lattice}, que para alguns casos resolve o problema em tempo polinomial. Deixamos como trabalho futuro uma possivel implementação deste ataque.
+Após a realização do trabalho e depois de compreendido o problema em questão foi possivel concluir que o sistema \textbf{Merkle-Hellman Knapsack} não é seguro, tal como ficou provado, apenas alguns anos após a sua publicação, por \textbf{Adi Shamir}.
+Existem várias maneiras de o atacar, de entre estas, destaca-se o \textbf{L}enstra-\textbf{L}enstra-\textbf{L}ovász\autocite{handbook}, que reduz o problema \textit{subset sum problem} a um de encontrar um \textit{short vector in a lattice}, baseada em aproximações, que resolve o problema em tempo polinomial. Deixamos como trabalho futuro uma possivel implementação deste ataque.
 
 \printbibliography
 
