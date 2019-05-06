@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  5 MAY 2019 23:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  6 MAY 2019 18:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -582,20 +582,78 @@ Package: amsthm 2017/10/31 v2.20.4
 \thm@headsep=\skip63
 \dth@everypar=\toks25
 )
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip64
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks26
+\ex@=\dimen110
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen111
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count109
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count110
+\leftroot@=\count111
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count112
+\DOTSCASE@=\count113
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen112
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count114
+\c@MaxMatrixCols=\count115
+\dotsspace@=\muskip11
+\c@parentequation=\count116
+\dspbrk@lvl=\count117
+\tag@help=\toks27
+\row@=\count118
+\column@=\count119
+\maxfields@=\count120
+\andhelp@=\toks28
+\eqnshift@=\dimen113
+\alignsep@=\dimen114
+\tagshift@=\dimen115
+\tagwidth@=\dimen116
+\totwidth@=\dimen117
+\lineht@=\dimen118
+\@envbody=\toks29
+\multlinegap=\skip65
+\multlinetaggap=\skip66
+\mathdisplay@stack=\toks30
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
 (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2018/02/11 v5.2c context-sensitive quotations (JAW)
 
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count109
+\etb@tempcnta=\count121
 )
-\csq@reset=\count110
-\csq@gtype=\count111
-\csq@glevel=\count112
-\csq@qlevel=\count113
-\csq@maxlvl=\count114
-\csq@tshold=\count115
-\csq@ltx@everypar=\toks26
+\csq@reset=\count122
+\csq@gtype=\count123
+\csq@glevel=\count124
+\csq@qlevel=\count125
+\csq@maxlvl=\count126
+\csq@tshold=\count127
+\csq@ltx@everypar=\toks31
 
 (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2018/02/11 v5.2c csquotes generic definitions (JAW)
@@ -611,7 +669,7 @@ Package: biblatex 2017/12/19 v3.10 programmable bibliographies (PK/JW/AB)
 
 (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count116
+\lrq@indent=\count128
 
 (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
@@ -619,62 +677,62 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
 \@xs@message=\write3
-\integerpart=\count117
-\decimalpart=\count118
+\integerpart=\count129
+\decimalpart=\count130
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
-\c@tabx@nest=\count119
-\c@listtotal=\count120
-\c@listcount=\count121
-\c@liststart=\count122
-\c@liststop=\count123
-\c@citecount=\count124
-\c@citetotal=\count125
-\c@multicitecount=\count126
-\c@multicitetotal=\count127
-\c@instcount=\count128
-\c@maxnames=\count129
-\c@minnames=\count130
-\c@maxitems=\count131
-\c@minitems=\count132
-\c@citecounter=\count133
-\c@savedcitecounter=\count134
-\c@uniquelist=\count135
-\c@uniquename=\count136
-\c@refsection=\count137
-\c@refsegment=\count138
-\c@maxextratitle=\count139
-\c@maxextratitleyear=\count140
-\c@maxextradate=\count141
-\c@maxextraalpha=\count142
-\c@abbrvpenalty=\count143
-\c@highnamepenalty=\count144
-\c@lownamepenalty=\count145
-\c@maxparens=\count146
-\c@parenlevel=\count147
-\blx@tempcnta=\count148
-\blx@tempcntb=\count149
-\blx@tempcntc=\count150
-\blx@maxsection=\count151
-\blx@maxsegment@0=\count152
-\blx@notetype=\count153
-\blx@parenlevel@text=\count154
-\blx@parenlevel@foot=\count155
-\blx@sectionciteorder@0=\count156
-\labelnumberwidth=\skip64
-\labelalphawidth=\skip65
-\biblabelsep=\skip66
-\bibitemsep=\skip67
-\bibnamesep=\skip68
-\bibinitsep=\skip69
-\bibparsep=\skip70
-\bibhang=\skip71
+\c@tabx@nest=\count131
+\c@listtotal=\count132
+\c@listcount=\count133
+\c@liststart=\count134
+\c@liststop=\count135
+\c@citecount=\count136
+\c@citetotal=\count137
+\c@multicitecount=\count138
+\c@multicitetotal=\count139
+\c@instcount=\count140
+\c@maxnames=\count141
+\c@minnames=\count142
+\c@maxitems=\count143
+\c@minitems=\count144
+\c@citecounter=\count145
+\c@savedcitecounter=\count146
+\c@uniquelist=\count147
+\c@uniquename=\count148
+\c@refsection=\count149
+\c@refsegment=\count150
+\c@maxextratitle=\count151
+\c@maxextratitleyear=\count152
+\c@maxextradate=\count153
+\c@maxextraalpha=\count154
+\c@abbrvpenalty=\count155
+\c@highnamepenalty=\count156
+\c@lownamepenalty=\count157
+\c@maxparens=\count158
+\c@parenlevel=\count159
+\blx@tempcnta=\count160
+\blx@tempcntb=\count161
+\blx@tempcntc=\count162
+\blx@maxsection=\count163
+\blx@maxsegment@0=\count164
+\blx@notetype=\count165
+\blx@parenlevel@text=\count166
+\blx@parenlevel@foot=\count167
+\blx@sectionciteorder@0=\count168
+\labelnumberwidth=\skip67
+\labelalphawidth=\skip68
+\biblabelsep=\skip69
+\bibitemsep=\skip70
+\bibnamesep=\skip71
+\bibinitsep=\skip72
+\bibparsep=\skip73
+\bibhang=\skip74
 \blx@bcfin=\read1
 \blx@bcfout=\write4
-\c@mincomprange=\count157
-\c@maxcomprange=\count158
-\c@mincompwidth=\count159
+\c@mincomprange=\count169
+\c@maxcomprange=\count170
+\c@mincompwidth=\count171
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -683,80 +741,80 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'ieee.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count160
-\c@savedafterword=\count161
-\c@annotator=\count162
-\c@savedannotator=\count163
-\c@author=\count164
-\c@savedauthor=\count165
-\c@bookauthor=\count166
-\c@savedbookauthor=\count167
-\c@commentator=\count168
-\c@savedcommentator=\count169
-\c@editor=\count170
-\c@savededitor=\count171
-\c@editora=\count172
-\c@savededitora=\count173
-\c@editorb=\count174
-\c@savededitorb=\count175
-\c@editorc=\count176
-\c@savededitorc=\count177
-\c@foreword=\count178
-\c@savedforeword=\count179
-\c@holder=\count180
-\c@savedholder=\count181
-\c@introduction=\count182
-\c@savedintroduction=\count183
-\c@namea=\count184
-\c@savednamea=\count185
-\c@nameb=\count186
-\c@savednameb=\count187
-\c@namec=\count188
-\c@savednamec=\count189
-\c@translator=\count190
-\c@savedtranslator=\count191
-\c@shortauthor=\count192
-\c@savedshortauthor=\count193
-\c@shorteditor=\count194
-\c@savedshorteditor=\count195
-\c@labelname=\count196
-\c@savedlabelname=\count197
-\c@institution=\count198
-\c@savedinstitution=\count199
-\c@lista=\count266
-\c@savedlista=\count267
-\c@listb=\count268
-\c@savedlistb=\count269
-\c@listc=\count270
-\c@savedlistc=\count271
-\c@listd=\count272
-\c@savedlistd=\count273
-\c@liste=\count274
-\c@savedliste=\count275
-\c@listf=\count276
-\c@savedlistf=\count277
-\c@location=\count278
-\c@savedlocation=\count279
-\c@organization=\count280
-\c@savedorganization=\count281
-\c@origlocation=\count282
-\c@savedoriglocation=\count283
-\c@origpublisher=\count284
-\c@savedorigpublisher=\count285
-\c@publisher=\count286
-\c@savedpublisher=\count287
-\c@language=\count288
-\c@savedlanguage=\count289
-\c@origlanguage=\count290
-\c@savedoriglanguage=\count291
-\c@pageref=\count292
-\c@savedpageref=\count293
-\shorthandwidth=\skip72
-\shortjournalwidth=\skip73
-\shortserieswidth=\skip74
-\shorttitlewidth=\skip75
-\shortauthorwidth=\skip76
-\shorteditorwidth=\skip77
+\c@afterword=\count172
+\c@savedafterword=\count173
+\c@annotator=\count174
+\c@savedannotator=\count175
+\c@author=\count176
+\c@savedauthor=\count177
+\c@bookauthor=\count178
+\c@savedbookauthor=\count179
+\c@commentator=\count180
+\c@savedcommentator=\count181
+\c@editor=\count182
+\c@savededitor=\count183
+\c@editora=\count184
+\c@savededitora=\count185
+\c@editorb=\count186
+\c@savededitorb=\count187
+\c@editorc=\count188
+\c@savededitorc=\count189
+\c@foreword=\count190
+\c@savedforeword=\count191
+\c@holder=\count192
+\c@savedholder=\count193
+\c@introduction=\count194
+\c@savedintroduction=\count195
+\c@namea=\count196
+\c@savednamea=\count197
+\c@nameb=\count198
+\c@savednameb=\count199
+\c@namec=\count266
+\c@savednamec=\count267
+\c@translator=\count268
+\c@savedtranslator=\count269
+\c@shortauthor=\count270
+\c@savedshortauthor=\count271
+\c@shorteditor=\count272
+\c@savedshorteditor=\count273
+\c@labelname=\count274
+\c@savedlabelname=\count275
+\c@institution=\count276
+\c@savedinstitution=\count277
+\c@lista=\count278
+\c@savedlista=\count279
+\c@listb=\count280
+\c@savedlistb=\count281
+\c@listc=\count282
+\c@savedlistc=\count283
+\c@listd=\count284
+\c@savedlistd=\count285
+\c@liste=\count286
+\c@savedliste=\count287
+\c@listf=\count288
+\c@savedlistf=\count289
+\c@location=\count290
+\c@savedlocation=\count291
+\c@organization=\count292
+\c@savedorganization=\count293
+\c@origlocation=\count294
+\c@savedoriglocation=\count295
+\c@origpublisher=\count296
+\c@savedorigpublisher=\count297
+\c@publisher=\count298
+\c@savedpublisher=\count299
+\c@language=\count300
+\c@savedlanguage=\count301
+\c@origlanguage=\count302
+\c@savedoriglanguage=\count303
+\c@pageref=\count304
+\c@savedpageref=\count305
+\shorthandwidth=\skip75
+\shortjournalwidth=\skip76
+\shortserieswidth=\skip77
+\shorttitlewidth=\skip78
+\shortauthorwidth=\skip79
+\shorteditorwidth=\skip80
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
@@ -778,13 +836,13 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2017/12/19 v3.10 biblatex compatibility (PK/JW/AB)
-\c@textcitecount=\count294
-\c@textcitetotal=\count295
-\c@textcitemaxnames=\count296
-\c@biburlnumpenalty=\count297
-\c@biburlucpenalty=\count298
-\c@biburllcpenalty=\count299
-\c@smartand=\count300
+\c@textcitecount=\count306
+\c@textcitetotal=\count307
+\c@textcitemaxnames=\count308
+\c@biburlnumpenalty=\count309
+\c@biburlucpenalty=\count310
+\c@biburllcpenalty=\count311
+\c@smartand=\count312
 )
 Package biblatex Info: Trying to load bibliography style 'ieee'...
 Package biblatex Info: ... file 'ieee.bbx' found.
@@ -806,8 +864,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2017/12/19 v3.10 biblatex bibliography style (PK/JW/AB)
-\c@bbx:relatedcount=\count301
-\c@bbx:relatedtotal=\count302
+\c@bbx:relatedcount=\count313
+\c@bbx:relatedtotal=\count314
 ))))
 Package biblatex Info: Trying to load citation style 'ieee'...
 Package biblatex Info: ... file 'ieee.cbx' found.
@@ -819,8 +877,8 @@ Package biblatex Info: ... file 'numeric-comp.cbx' found.
 
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric-comp.cbx
 File: numeric-comp.cbx 2017/12/19 v3.10 biblatex citation style (PK/JW/AB)
-\c@cbx@tempcnta=\count303
-\c@cbx@tempcntb=\count304
+\c@cbx@tempcnta=\count315
+\c@cbx@tempcntb=\count316
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
@@ -842,7 +900,7 @@ Package biblatex Info: ... file 'biblatex.cfg' found.
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
 ))
-\c@definition=\count305
+\c@definition=\count317
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
@@ -875,7 +933,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
-\AtBeginShipoutBox=\box28
+\AtBeginShipoutBox=\box30
 Package hyperref Info: Link coloring OFF on input line 5.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -883,7 +941,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count306
+\c@section@level=\count318
 )
 LaTeX Info: Redefining \ref on input line 5.
 LaTeX Info: Redefining \pageref on input line 5.
@@ -896,17 +954,17 @@ LaTeX Info: Redefining \nameref on input line 5.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count307
-\scratchdimen=\dimen110
-\scratchbox=\box29
-\nofMPsegments=\count308
-\nofMParguments=\count309
-\everyMPshowfont=\toks27
-\MPscratchCnt=\count310
-\MPscratchDim=\dimen111
-\MPnumerator=\count311
-\makeMPintoPDFobject=\count312
-\everyMPtoPDFconversion=\toks28
+\scratchcounter=\count319
+\scratchdimen=\dimen119
+\scratchbox=\box31
+\nofMPsegments=\count320
+\nofMParguments=\count321
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count322
+\MPscratchDim=\dimen120
+\MPnumerator=\count323
+\makeMPintoPDFobject=\count324
+\everyMPtoPDFconversion=\toks33
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -939,17 +997,11 @@ Package biblatex Info: ... file 'main.bbl' found.
  (./main.bbl)
 Package biblatex Info: Reference section=0 on input line 5.
 Package biblatex Info: Reference segment=0 on input line 5.
-<./Imagens/minho.png, id=60, 1204.5pt x 602.25pt>
+<./Imagens/minho.png, id=56, 1204.5pt x 602.25pt>
 File: ./Imagens/minho.png Graphic file (type png)
 <use ./Imagens/minho.png>
 Package pdftex.def Info: ./Imagens/minho.png  used on input line 14.
 (pdftex.def)             Requested size: 180.0pt x 89.99358pt.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 14.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 14.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 14.
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 14.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
@@ -971,10 +1023,7 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.20 \end{abstract}
-                    [1] (./main.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 8.
-)
+                    [1] (./main.toc)
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
@@ -1034,104 +1083,99 @@ put line 66.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language append on input line 81.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 109.
+(babel)             in language append on input line 108.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 109.
+(babel)             in language append on input line 108.
  [5]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language append on input line 112.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 122.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 131.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 135.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 117.
 
-Overfull \hbox (5.85675pt too wide) in paragraph at lines 136--141
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 117.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 125.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 134.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 137.
+
+Overfull \hbox (5.85675pt too wide) in paragraph at lines 138--143
 \T1/cmr/m/n/10.95 Uma va-ri-ante do al-go-ritmo base de Merkle-Hellman en-volve
  dis-far-çar a sequên-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 136--141
+Underfull \hbox (badness 10000) in paragraph at lines 138--143
 
  []
 
-
-LaTeX Warning: Reference `def:3' on page 6 undefined on input line 142.
-
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 144.
+(babel)             in language append on input line 143.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 144.
+(babel)             in language append on input line 143.
 [6]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 144.
+(babel)             in language append on input line 147.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 150.
+(babel)             in language append on input line 156.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 157.
+(babel)             in language append on input line 163.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 172.
+(babel)             in language append on input line 167.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 172.
+(babel)             in language append on input line 167.
  [7]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 180.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 180.
+ [8]
 Cap\'{\i }tulo 3.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 172.
+(babel)             in language append on input line 180.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 178.
+(babel)             in language append on input line 186.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 178.
-[8
+(babel)             in language append on input line 186.
+[9
 
 ]
-Overfull \hbox (13.51176pt too wide) in paragraph at lines 179--179
+Overfull \hbox (13.51176pt too wide) in paragraph at lines 187--187
 []\T1/cmr/m/it/10.95 Finding a co-prime of a ge-ne-ral mag-ni-tude\T1/cmr/m/n/1
 0.95 , []$\T1/cmtt/m/n/10.95 https : / / math . stackexchange .
  []
 
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 188.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 182.
+(babel)             in language append on input line 188.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 182.
-[9
-
-]
-Ap\^endice A.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 182.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 186.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 186.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 186.
+(babel)             in language append on input line 188.
 [10
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 186.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 188.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 186.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 186.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 188.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 188.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F4413D5B6672D589B24E1F0E682DB8E6;975.
-
-
-LaTeX Warning: There were undefined references.
-
+(rerunfilecheck)             Checksum: 6EA2345229E3819F349D9CC4B5DC714B;929.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 186.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 188.
  ) 
 Here is how much of TeX's memory you used:
- 14120 strings out of 492982
- 230789 string characters out of 6134895
- 521479 words of memory out of 5000000
- 17466 multiletter control sequences out of 15000+600000
- 18548 words of font info for 42 fonts, out of 8000000 for 9000
+ 14701 strings out of 492982
+ 237535 string characters out of 6134895
+ 531793 words of memory out of 5000000
+ 18027 multiletter control sequences out of 15000+600000
+ 19446 words of font info for 46 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 40i,6n,45p,931b,1654s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,6n,45p,931b,1650s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1150,10 +1194,10 @@ ic/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095
 mf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/publi
 c/cm-super/sfti1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.
 pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (12 pages, 350482 bytes).
+Output written on main.pdf (12 pages, 350826 bytes).
 PDF statistics:
- 248 PDF objects out of 1000 (max. 8388607)
- 208 compressed objects within 3 object streams
- 35 named destinations out of 1000 (max. 500000)
- 118 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 247 PDF objects out of 1000 (max. 8388607)
+ 207 compressed objects within 3 object streams
+ 34 named destinations out of 1000 (max. 500000)
+ 110 words of extra memory for PDF output out of 10000 (max. 10000000)
 

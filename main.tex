@@ -25,28 +25,28 @@
 
 \chapter{Introdução}
 
-	Ao contrario do RSA nao da para fazer assinaturas criptograficas - wiki
+Ao contrario do RSA nao da para fazer assinaturas criptograficas
 1976 Diffie Hellman introduzem a ideia de criptografia de chave publica
 Este trabalho foi desenvolvido no ambito da Unidade Curricular de \textit{Teoria de Números Computacional}. De entre as escolhas possiveis, foi escolhido estudar o sistema \textit{Merkle-Hellman Knapsack}. \\
-Este foi um dos pioneiros da criptografia de chave pública, inventado por \textbf{Ralph Merkle} e por \textbf{Martin Hellman} em 1978.
+Este foi um dos pioneiros da criptografia de chave pública, inventado por \textbf{Ralph Merkle} e por \textbf{Martin Hellman} em 1978, 2 anos após a introdução da ideia de criptografia de chave pública.
 A ideia por detrás deste sistema é mais simples do que a de sistemas como o \textit{RSA}, assentando no problema  (tendo já sido quebrado -- meter isto noutro sitio??).
 
 \chapter{Implementação}
 
 Ao longo das secções deste capítulo apresentamos os vários algoritmos seguidos para a codificação do sistema.
-A implementação destes segue em anexo, assim como ficheiros de texto que acompanham o relatório.
+A implementação destes segue nos ficheiros de texto que acompanham o relatório.
 
 \section{Geração de Permutações}
 \label{perm}
 
 Um dos passos da Geração da Chave Pública - \ref{gkey} - consiste em gerar uma permutação de uma sequência. Para tal utilizamos o algoritmo proposto por \textbf{Sandra Sattolo}\autocite{sattolo}.\\
 Este itera uma lista - $seq$ - a partir do último índice desta - $n$. Em cada passo calculamos um índice aleatório - $j$ - tal que $1 \le j < n$ e de seguida trocamos os valores de $seq_j$ e $seq_n$. Finalmente, terminámos quando $n = 1$. No nossa implementação usamos listas para guardar as permutações.\\
-A implementacão deste pode ser vista em: 
+Na implementação, a função tem o nome \textbf{sattoloShuffle}.
 
 \section{Geração de um sequência super crescente aleatória}
 \label{seq}
 
-Um dos componentes da Chave Privada é uma sequência, esta é considerada super crescente se:\\
+Um dos componentes da Chave Privada - \ref{gkey} - é uma sequência, esta é considerada super crescente se:\\
 \begin{definition}
 	Consideremos uma sequência de números ${b_1, ..., b_n}$. Esta diz-se super crescente se:
 	\begin{center}
@@ -67,7 +67,7 @@ Com isto apresentamos o nosso algoritmo.
 	\textbf{Recebe}: $n$ - o tamanho da sequência\\
 	\textbf{Devolve}: $\{x_1, ..., x_n\}$ - uma sequência super crescente aleatória
 	\begin{algorithmic}[1]
-		\State $k$ um limite superior aleatóriamente grande
+		\State $k$ um limite aleatóriamente grande
 		\State $f$ uma funcão que satisfaz $f(x) > 2 * x$
 		\State $x_1 \gets j$ tal que $1 \le j \le k$ aleatório
 		\For{$x_i$ com $i:=2$ \textbf{até} $n$ }
@@ -76,14 +76,13 @@ Com isto apresentamos o nosso algoritmo.
 	\end{algorithmic}
 \end{algorithm}
 
-A implementacão deste algoritmo segue em anexo - ()().
+Na implementação, a função tem o nome \textbf{randomSupIncSequence}.
 
 \section{Geração de Coprimos}
 \label{coprimos}
 
 Também durante a Geração das Chaves - \ref{gkey} - do sistema temos de considerar dois valores, $M$ e $W$.
 Dada um sequência super crescente $\{b_1, ..., b_n\}$, $M$ verifica:
-NOTA :: ISTO TA UM BOCADO OFF TOPIC, DEPOIS VER
 \begin{center}
 	$M > \sum_{j = 1}^{N} b_j$
 \end{center}
@@ -93,7 +92,7 @@ $W$ por sua vez, verifica:
         $1 \leq W < M$ e $ \gcd(W,M) = 1 $
 \end{center}
 
-O algoritmo considerado adopta uma estratégia brute force. Esta é possível devido ao apresentado aqui \autocite{stackex}. Este considera um valor aleatório para $W$ compreendido no intervalo apresentado acima, testando o $\gcd$ de este com $M$. Se forem coprimos o processo para, caso contrário somamos um a este e repetimos o teste. O algoritmo pode ser descrito como.
+O algoritmo considerado adopta uma estratégia brute force. Esta é possível devido ao apresentado aqui \autocite{stackex}. Este considera um valor aleatório para $W$ compreendido no intervalo apresentado acima, testando o $\gcd$ de este com $M$. Se forem coprimos o processo para, caso contrário somamos um a este e repetimos o teste. 
 
 \begin{algorithm}[H]
 	\caption{Gerador de Coprimos - brute force}
@@ -107,30 +106,33 @@ O algoritmo considerado adopta uma estratégia brute force. Esta é possível de
 	\end{algorithmic}
 \end{algorithm}
 
-A sua implementação segue - ref.
+Na implementação, a função que calcula um $M$ tem o nome \textbf{findM}.
+Na implementação, a função que calcula um $W$ tem o nome \textbf{findW}.
 
-\section{Geração da Chave}
+\section{Geração das Chaves}
 \label{gkey}
-Dada uma permutação de uma sequência $\pi$.
-\\
-Dada uma sequência super crescente ${b_1, ..., b_n}$.
-\\
-Dados dois inteiros co primos W e M.
-\\
-A geração da chave pode ser dividida em duas subcategorias.
+Reunindo os vários algoritmos decritos nas secções anteriores, podemos agora construir as Chaves do sistema.
+Consideremos as várias componentes precisas ao longo deste secção.
+\begin{itemize}
+	\item Uma permutação - $\pi$ - \ref{perm}
+	\item Uma sequência super crescente aleatória - $\{b_1, ..., b_n\}$ - \ref{seq} 
+	\item Dois inteiros coprimos $W$ e $M$ - \ref{coprimos}. Para as versões multi iteradas ainda extendemos estes valores para 2 sequências $\{W_1, ..., W_n\}$ e $\{M_1, ..., W_n\}$ tais que $\gcd(W_i, W_i) = 1$ para $i = 1$ até $n$.  
+\end{itemize}
+
+O algoritmo seguido é dado em - \autocite{handbook}.
+Com isto, a geração da chave pode ser dividida em duas subcategorias.
 
 \subsection{Geração da chave Pública}
 \begin{definition}\label{def:4}
 	São computados ${a_i}$ tal que:
 	\begin{center}
-		$a_i = W \times b_{\pi_i} mod M $ para cada $i$ tal que $1 \le i \le n$.
+		$a_i = W \times b_{\pi_i} \Mod{M}$ para cada $i$ tal que $1 \le i \le n$.
         \end{center}
 \end{definition}
 A chave publica é dada por $({a_1, a_2, ..., a_n})$
 
 \subsection{Geração da chave Privada}
 A chave privada é dada por $(\pi, M, W, {(b_1, b_2, b_3, ..., b_n)})$
-\autocite{handbook}
 
 \subsection{Versão Multi-Iterada}
 Uma variante do algoritmo base de Merkle-Hellman envolve disfarçar a sequência super crescente, através de sucessivas multiplicações modulares.
@@ -139,17 +141,21 @@ Neste caso precisamos de fixar outro inteiro, T, que ditará o numero de iteraç
 Mais uma vez um inteiro N é fixo como parâmetro de sistema.
 \\
 
-Para $1 \le j \le T$ são feitos os cálculos descritos na definição ja nao e definicao. Para calcular a sequencia atual são calculados $M_j$ e $W_j$, da mesma maneira que eram calculados na geração da chaves no algoritmo básico. O $M_j$ é calculado com base na sequência super crescente anterior (índice $j-1$) sendo então depois calculado $W_j$ como descrito na definição \ref{def:3}, tendo como base uma sequencia ${a_1, ..., a_n}$ dada, sendo esta a chave privada.
+Para $1 \le j \le T$ são feitos os cálculos descritos na definição ja nao e definicao. Para calcular a sequencia atual são calculados $M_j$ e $W_j$, da mesma maneira que eram calculados na geração da chaves no algoritmo básico. O $M_j$ é calculado com base na sequência super crescente anterior (índice $j-1$) sendo depois calculado $W_j$ de maneira igual ao calculado na versão normal. A sequência dada na primeira iteração ${a_1, ..., a_n}$ é a que será usada na Chave Privada.
 
+Na implementação, a função que que gera as Chave Simples tem o nome \textbf{KSKeyGen}. Para a versão Multi Iterada a função tem o nome \textbf{MIKSKeyGen}.
 \section{Encriptacão}
 A encriptação é feita a partir da chave pública $a_1, a_2, ... a_n$. É representada a mensagem $m$ a encriptar em binário como uma string de tamanho N. ($m = m_1 m_2 ... m_n$)
 \\
 Finalmente é calculado um inteiro c tal que:
     $c = \sum_{i = 1}^{N} a_i \times m_i$.
 
+
+Na implementação, a função da versão simples tem o nome \textbf{KSEncrypt}. A versão multi iterada tem o nome \textbf{MIKSEncrypt}
+
 \section{Decriptação}
 Para recuperar a mensagem $m$ a partir de $c$, o dono da chave privada deve:
-Calcular $d = W^{-1}\times c$ mod $M$.
+Calcular $d = W^{-1}\times c \Mod{M}$.
 \\
 Encontrar inteiros ${r_1, ..., r_n}, r_i \in \{0,1\}$ tal que $d = r_1 \times b_1 + r_2 \times b_2 + ... + r_n \times b_n$.
 \\
@@ -159,7 +165,7 @@ A decriptação desta variante do algoritmo é análoga à sua encriptação, ou
 \\
 A decriptação é feita a partir de sucessivamente calcularmos:
 \begin{center}
-$d_j = W^{-1}\times d_{j+1}$ mod $M_j$, para $j = {t, t-1, ..., 1}$
+	$d_j = W^{-1}\times d_{j+1} \Mod{M_j}$, para $j = {t, t-1, ..., 1}$
 \end{center}
 onde $d_{t+1} = c$.
 \\
@@ -169,6 +175,8 @@ Finalmente só temos de encontrar inteiros ${r_1, ..., r_n}, r_i \in \{0,1\}$ ta
 \end{center}
 E os bits da mensagem são recuperados a partir de aplicarmos a permutação $\pi$.
 
+Na implementação, a função para a versão normal tem o nome \textbf{KSDecrypt}. A versão multi iterada tem o nome \textbf{MIKSDecrypt}.
+
 \chapter{Conclusões}
 
 Após a realizaçao do trabalho e depois de compreendido o problema em questão foi possivel concluir que o sistema Merkle-Hellman Knapsack tal como praticamente todos os cripto-sistemas baseados no \textit{knapsack problem} nao é seguro.Tal como ficou provado, apenas alguns anos após a sua publicaçao, por \textbf{Adi Shamir}. 
@@ -176,11 +184,5 @@ Existem várias maneiras de o atacar.È possivel faze-lo,por exemplo, atacando a
 Para finalizar, resta só concluir que existem poucos sistemas que sejam eguros e poderosos que ainda não tenham sido quebrados. Um deles é o RSA fazendo por isso com que seja um dos, se nao mesmo o mais utilizado. 
 
 \printbibliography
-
-\appendix
-
-\chapter{Código??}
-
-Será que vai num ficheiro separadamente?
 
 \end{document}
