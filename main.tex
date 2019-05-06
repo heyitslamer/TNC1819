@@ -26,8 +26,8 @@
 \chapter{Introdução}
 
 Este trabalho foi desenvolvido no ambito da Unidade Curricular de \textit{Teoria de Números Computacional}. De entre as escolhas possiveis, foi escolhido estudar o sistema \textit{Merkle-Hellman Knapsack}. \\
-Este foi um dos pioneiros da criptografia de chave pública, inventado por \textbf{Ralph Merkle} e por \textbf{Martin Hellman} em 1978, 2 anos após a introdução da ideia de criptografia de chave pública.
-Ao contrário do \textbf{RSA}, um outro sistema de chave pública, este não serve para fazer autentificações a partir de assinaturas digitais. Devido á encriptação deste so usar a chave pública e a decriptação só usar a chave privada.
+Este foi um dos pioneiros da criptografia de chave pública, inventado por \textbf{Ralph Merkle} e por \textbf{Martin Hellman} em 1978, 2 anos após a introdução deste conceito.
+Ao contrário do \textbf{RSA}, um outro sistema de chave pública, este não serve para fazer autentificações a partir de assinaturas digitais. Devido à encriptação deste só usar a chave pública e a decriptação só usar a chave privada.
 O sistema, assenta num problema \textit{subset sub problem} um caso especial do problema da \textit{Mochila}, conhecido por ser \textbf{NP-complete}. Utiliza um variante "fácil" que acenta em sequências super crescentes para as chaves privadas, e um "difícil" para as chaves públicas.
 \chapter{Implementação}
 
@@ -40,7 +40,7 @@ A implementação destes segue nos ficheiros de texto que acompanham o relatóri
 \label{perm}
 
 Um dos passos da Geração da Chave Pública - \ref{gkey} - consiste em gerar uma permutação de uma sequência. Para tal utilizamos o algoritmo proposto por \textbf{Sandra Sattolo}\autocite{sattolo}.\\
-Este itera uma lista - $seq$ - a partir do último índice desta - $n$. Em cada passo calculamos um índice aleatório - $j$ - tal que $1 \le j < n$ e de seguida trocamos os valores de $seq_j$ e $seq_n$. Finalmente, terminámos quando $n = 1$. No nossa implementação usamos listas para guardar as permutações.\\
+Este itera uma lista - $seq$ - a partir do último índice desta - $n$. Em cada passo calculamos um índice aleatório - $j$ - tal que $1 \le j < n$ e de seguida trocamos os valores de $seq_j$ e $seq_n$. Finalmente, terminámos quando $n = 1$. Na nossa implementação usamos listas para guardar as permutações.\\
 Na implementação, a função tem o nome \textbf{sattoloShuffle}.
 
 \section{Geração de um sequência super crescente aleatória}
