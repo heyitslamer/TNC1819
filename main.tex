@@ -14,7 +14,7 @@
 
 \begin{abstract}
 
-	Este documento apresenta os vários passos e considerações feitas para implementação do sistema em questão. Assim como, alguns factos relativos a este.  
+	Este documento apresenta os vários passos e considerações feitas para implementação do sistema em questão. Assim como, alguns factos relativos a este.
 
 
 \end{abstract}
@@ -27,8 +27,8 @@
 
 Este trabalho foi desenvolvido no ambito da Unidade Curricular de \textit{Teoria de Números Computacional}. De entre as escolhas possiveis, foi escolhido estudar o sistema \textit{Merkle-Hellman Knapsack}. \\
 Este foi um dos pioneiros da criptografia de chave pública, inventado por \textbf{Ralph Merkle} e por \textbf{Martin Hellman} em 1978, 2 anos após a introdução da ideia de criptografia de chave pública.
-Ao contrário do \textbf{RSA}, um outro sistema de chave pública, este não serve para fazer autentificações a partir de assinaturas digitais. Devido á encriptação deste so usar a chave pública e a decriptação só usar a chave privada.  
-
+Ao contrário do \textbf{RSA}, um outro sistema de chave pública, este não serve para fazer autentificações a partir de assinaturas digitais. Devido á encriptação deste so usar a chave pública e a decriptação só usar a chave privada.
+O sistema, assenta num problema \textit{subset sub problem} um caso especial do problema da \textit{Mochila}, conhecido por ser \textbf{NP-complete}. Utiliza um variante "fácil" que acenta em sequências super crescentes para as chaves privadas, e um "difícil" para as chaves públicas.
 \chapter{Implementação}
 
 Link da implementação no CoCalc - \href{https://cocalc.com/share/1bede121-9d2a-477f-be2c-1dea8a3a05a6/Merkle-Hellman%20knapsack.ipynb?viewer=share}{aqui} - Kernel usado: \texttt{SageMath, Py3}.
@@ -50,7 +50,7 @@ Um dos componentes da Chave Privada - \ref{gkey} - é uma sequência, esta é co
 \begin{definition}
 	Consideremos uma sequência de números ${b_1, ..., b_n}$. Esta diz-se super crescente se:
 	\begin{center}
-		$b_i > \sum_{j = 1}^{i - 1} b_j$ para cada $i$, $2 \le i \le n$. 
+		$b_i > \sum_{j = 1}^{i - 1} b_j$ para cada $i$, $2 \le i \le n$.
 	\end{center}
 \end{definition}
 
@@ -60,7 +60,7 @@ Como tal, conseguimos deduzir:
 	$b_1 + b_2 + ... + b_k < 2 \times b_k$
 \end{center}
 
-Ou seja, precisamos apenas de considerar o último valor gerado para calcular um possivel próximo.
+Ou seja, precisamos apenas de considerar o último valor gerado para calcular um próximo.
 Com isto apresentamos o nosso algoritmo.
 \begin{algorithm}[H]
 	\caption{Geração da sequência super crescente aleatória}
@@ -92,14 +92,14 @@ $W$ por sua vez, verifica:
         $1 \leq W < M$ e $ \gcd(W,M) = 1 $
 \end{center}
 
-O algoritmo considerado adopta uma estratégia brute force. Esta é possível devido ao apresentado aqui \autocite{stackex}. Este considera um valor aleatório para $W$ compreendido no intervalo apresentado acima, testando o $\gcd$ de este com $M$. Se forem coprimos o processo para, caso contrário somamos um a este e repetimos o teste. 
+O algoritmo considerado adopta uma estratégia brute force. Isto é possível face ao discutido num artigo de \textit{StackExchange} \autocite{stackex}, que demonstra que calcular o gcd é uma operação não custosa. Este considera um valor aleatório para $W$ compreendido no intervalo apresentado acima, testando o $\gcd$ de este com $M$. Se forem coprimos o processo para, caso contrário somamos um a este e repetimos o teste.
 
 \begin{algorithm}[H]
 	\caption{Gerador de Coprimos - brute force}
 	\textbf{Recebe}: $M$ - um número\\
 	\textbf{Devolve}: $W$ - um número coprimo com o argumento, $1 \le W < M$
 	\begin{algorithmic}[1]
-		\State $W \gets$ número aleatório tal que $1 \le W < M$	
+		\State $W \gets$ número aleatório tal que $1 \le W < M$
 		\While{$\gcd(M, W) \ne 1$}
 			\State $W = W + 1$
 		\EndWhile
@@ -115,11 +115,11 @@ Reunindo os vários algoritmos decritos nas secções anteriores, podemos agora 
 Consideremos as várias componentes precisas ao longo deste secção.
 \begin{itemize}
 	\item Uma permutação - $\pi$ - \ref{perm}
-	\item Uma sequência super crescente aleatória - $\{b_1, ..., b_n\}$ - \ref{seq} 
-	\item Dois inteiros coprimos $W$ e $M$ - \ref{coprimos}. Para as versões multi iteradas ainda extendemos estes valores para 2 sequências $\{W_1, ..., W_n\}$ e $\{M_1, ..., W_n\}$ tais que $\gcd(W_i, W_i) = 1$ para $i = 1$ até $n$.  
+	\item Uma sequência super crescente aleatória - $\{b_1, ..., b_n\}$ - \ref{seq}
+	\item Dois inteiros coprimos $W$ e $M$ - \ref{coprimos}. Para as versões multi iteradas ainda extendemos estes valores para 2 sequências $\{W_1, ..., W_n\}$ e $\{M_1, ..., W_n\}$ tais que $\gcd(W_i, W_i) = 1$ para $i = 1$ até $n$.
 \end{itemize}
 
-O algoritmo seguido é dado em - \autocite{handbook}.
+O algoritmo seguido é dado na bibliografia recomendada \autocite{handbook}.
 Com isto, a geração da chave pode ser dividida em duas subcategorias.
 
 \subsection{Geração da chave Pública}
@@ -141,7 +141,7 @@ Neste caso precisamos de fixar outro inteiro, T, que ditará o numero de iteraç
 Mais uma vez um inteiro N é fixo como parâmetro de sistema.
 \\
 
-Para $1 \le j \le T$ são feitos os cálculos descritos na definição ja nao e definicao. Para calcular a sequencia atual são calculados $M_j$ e $W_j$, da mesma maneira que eram calculados na geração da chaves no algoritmo básico. O $M_j$ é calculado com base na sequência super crescente anterior (índice $j-1$) sendo depois calculado $W_j$ de maneira igual ao calculado na versão normal. A sequência dada na primeira iteração ${a_1, ..., a_n}$ é a que será usada na Chave Privada.
+Para $1 \le j \le T$ são feitos os cálculos descritos em \ref{coprimos}. Para calcular a sequencia atual são calculados $M_j$ e $W_j$, da mesma maneira que eram calculados na geração da chaves no algoritmo básico. O $M_j$ é calculado com base na sequência super crescente anterior (índice $j-1$) sendo depois calculado $W_j$ de maneira igual ao calculado na versão normal. A sequência dada na primeira iteração ${a_1, ..., a_n}$ é a que será usada na Chave Privada.
 
 Na implementação, a função que que gera as Chave Simples tem o nome \textbf{KSKeyGen}. Para a versão Multi Iterada a função tem o nome \textbf{MIKSKeyGen}.
 \section{Encriptacão}
@@ -179,9 +179,8 @@ Na implementação, a função para a versão normal tem o nome \textbf{KSDecryp
 
 \chapter{Conclusões}
 
-Após a realizaçao do trabalho e depois de compreendido o problema em questão foi possivel concluir que o sistema Merkle-Hellman Knapsack tal como praticamente todos os cripto-sistemas baseados no \textit{knapsack problem} nao é seguro.Tal como ficou provado, apenas alguns anos após a sua publicaçao, por \textbf{Adi Shamir}. 
-Existem várias maneiras de o atacar.È possivel faze-lo,por exemplo, atacando a sua versão Multi-Iterada ou através da divisão em várias partes (falta-me aqui a palavra apropriada) , existindo ainda mais alguns ataques possiveis. Sendo uma demonstraçao de um ataque a este sistema é uma boa aposta para um trabalho futuro.
-Para finalizar, resta só concluir que existem poucos sistemas que sejam eguros e poderosos que ainda não tenham sido quebrados. Um deles é o RSA fazendo por isso com que seja um dos, se nao mesmo o mais utilizado. 
+Após a realização do trabalho e depois de compreendido o problema em questão foi possivel concluir que o sistema Merkle-Hellman Knapsack não é seguro, tal como ficou provado, apenas alguns anos após a sua publicação, por \textbf{Adi Shamir}.
+Existem várias maneiras de o atacar, de entre estas, destaca-se o \textbf{L}enstra-\textbf{L}enstra-\textbf{L}ovász\autocite{handbook}, que reduz o problema \textit{subset sum problem} a um de encontrar \textit{short vector in a lattice}, que para alguns casos resolve o problema em tempo polinomial. Deixamos como trabalho futuro uma possivel implementação deste ataque.
 
 \printbibliography
 

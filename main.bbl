@@ -41,22 +41,35 @@
   \endentry
 
   \entry{handbook}{book}{}
-    \name{author}{1}{}{%
+    \name{author}{3}{}{%
       {{hash=MAJ}{%
          family={Menezes},
          familyi={M\bibinitperiod},
          given={A.\bibnamedelima J.},
          giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
       }}%
+      {{hash=vOPC}{%
+         prefix={van},
+         prefixi={v\bibinitperiod},
+         family={Oorschot},
+         familyi={O\bibinitperiod},
+         given={Paul\bibnamedelima C.},
+         giveni={P\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=VSA}{%
+         family={Vanstone},
+         familyi={V\bibinitperiod},
+         given={Scott\bibnamedelima A.},
+         giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
     }
     \list{publisher}{1}{%
       {CRC Press}%
     }
-    \strng{namehash}{MAJ1}
-    \strng{fullhash}{MAJ1}
+    \strng{namehash}{MAJOPCvVSA1}
+    \strng{fullhash}{MAJOPCvVSA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{chapter}{8.6}
     \field{isbn}{978-0849385230}
     \field{note}{Acedido a partir de
   \url{http://cacr.uwaterloo.ca/hac/about/chap8.pdf}}
